@@ -1,0 +1,33 @@
+//Hecho en ActionScript2-Flash5
+//Hay 2 clip de pelicula principales, que son los cronometros, estos tienen digitos en cada fotograma en cuenta regresiva de 20 a 0 minutos, y de 60  a 0 segundos. 
+//Hay 4 clips de pelicula que señalan que el boton esta activado.
+//Hay in clip de musica o que dispara un sonido y activa un fondo rojo cuando la cuenta regresiva llega a cero.
+//Este script esta ubicado en uno de los botones
+
+on (release) {
+    tellTarget ("_root.Cronometro.Segundos") {
+        gotoAndPlay (2);
+        tellTarget ("_root.Cronometro.Minutos") {
+            gotoAndStop ("19");
+            tellTarget ("_root.Cronometro.BotonActivado") {
+                gotoAndPlay (2);
+                tellTarget ("_root.Cronometro.BotonActivado10") {
+                    gotoAndStop (1);
+                    tellTarget ("_root.Cronometro.BotonActivado15") {
+                        gotoAndStop (1);
+                        tellTarget ("_root.Cronometro.BotonActivado5") {
+                            gotoAndStop (1);
+                            tellTarget ("_root.Cronometro.GoRojo") {
+                                gotoAndStop (2);
+                                tellTarget ("_root.Cronometro.Musica") {
+                                    gotoAndStop (1);
+                                    stopAllSounds ();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
